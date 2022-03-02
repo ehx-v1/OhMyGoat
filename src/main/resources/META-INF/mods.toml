@@ -1,0 +1,17 @@
+modLoader = "javafml" #mandatory
+loaderVersion = "[39,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license = "GNU GPL 3.0"
+issueTrackerURL = "https://www.github.com/Affehund/OhMyGoat" #optional
+[[mods]] #mandatory
+modId = "ohmygoat" #mandatory
+version = "${file.jarVersion}" #mandatory
+displayName = "Oh My Goat" #mandatory
+displayURL = "https://www.curseforge.com/mc-mods/goat" #optional
+logoFile = "ohmygoat.png" #optional
+authors = "Affehund" #optional
+description = '''
+A mod to give goats more functionalities.
+This mods adds goat meat, goat cheese (made by putting goat milk into a cauldron)
+and the goat horn with which you can scare other players and upgrade helmets to horned, thorned helmets.
+Besides this there are many new advancements and other small things related to goats.
+'''

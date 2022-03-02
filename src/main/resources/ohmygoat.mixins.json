@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.affehund.ohmygoat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "ohmygoat.refmap.json",
+  "mixins": [
+    "GoatMixin",
+    "LivingEntityMixin",
+    "PiglinAiMixin",
+    "SmithingMenuMixin"
+  ],
+  "client": [
+    "client.CreativeModeInventoryScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

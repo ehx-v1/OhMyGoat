@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:golden_helmet"
+  },
+  "addition": {
+    "item": "ohmygoat:goat_horn"
+  },
+  "result": {
+    "item": "ohmygoat:horned_golden_helmet"
+  }
+}

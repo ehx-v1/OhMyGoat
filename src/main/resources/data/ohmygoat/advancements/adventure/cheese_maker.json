@@ -1,0 +1,40 @@
+{
+  "parent": "ohmygoat:adventure/spyglass_at_goat",
+  "display": {
+    "icon": {
+      "item": "ohmygoat:goat_milk_bucket"
+    },
+    "title": {
+      "translate": "ohmygoat.advancements.ohmygoat.cheese_maker.title"
+    },
+    "description": {
+      "translate": "ohmygoat.advancements.ohmygoat.cheese_maker.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cheese_maker": {
+      "trigger": "minecraft:item_used_on_block",
+      "conditions": {
+        "location": {
+          "block": {
+            "tag": "minecraft:cauldrons"
+          }
+        },
+        "item": {
+          "items": [
+            "ohmygoat:goat_milk_bucket"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "cheese_maker"
+    ]
+  ]
+}
