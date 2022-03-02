@@ -1,0 +1,47 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "ohmygoat:horned_leather_helmet_from_smithing"
+    ]
+  },
+  "criteria": {
+    "has_leather_helmet": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:leather_helmet"
+            ]
+          }
+        ]
+      }
+    },
+    "has_goat_horn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ohmygoat:goat_horn"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ohmygoat:horned_leather_helmet_from_smithing"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_leather_helmet",
+      "has_goat_horn",
+      "has_the_recipe"
+    ]
+  ]
+}

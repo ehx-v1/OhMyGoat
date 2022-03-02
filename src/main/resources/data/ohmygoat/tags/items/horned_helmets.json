@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ohmygoat:horned_chainmail_helmet",
+    "ohmygoat:horned_diamond_helmet",
+    "ohmygoat:horned_golden_helmet",
+    "ohmygoat:horned_iron_helmet",
+    "ohmygoat:horned_leather_helmet",
+    "ohmygoat:horned_netherite_helmet"
+  ]
+}

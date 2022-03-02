@@ -1,0 +1,36 @@
+{
+  "parent": "ohmygoat:adventure/rammed_by_goat",
+  "display": {
+    "icon": {
+      "item": "ohmygoat:goat_horn",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "ohmygoat.advancements.ohmygoat.use_goat_horn.title"
+    },
+    "description": {
+      "translate": "ohmygoat.advancements.ohmygoat.use_goat_horn.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "use_goat_horn": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "item": {
+          "items": [
+            "ohmygoat:goat_horn"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "use_goat_horn"
+    ]
+  ]
+}

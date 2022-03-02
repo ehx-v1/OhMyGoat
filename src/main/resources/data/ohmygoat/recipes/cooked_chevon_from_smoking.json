@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "ohmygoat:chevon"
+  },
+  "result": "ohmygoat:cooked_chevon",
+  "experience": 0.4,
+  "cookingtime": 100
+}

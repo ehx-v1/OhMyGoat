@@ -1,0 +1,38 @@
+{
+  "parent": "ohmygoat:adventure/rammed_by_goat",
+  "display": {
+    "icon": {
+      "item": "ohmygoat:horned_netherite_helmet",
+      "nbt": "{Damage:0}"
+    },
+    "title": {
+      "translate": "ohmygoat.advancements.ohmygoat.horned_helmet.title"
+    },
+    "description": {
+      "translate": "ohmygoat.advancements.ohmygoat.horned_helmet.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "horned_helmet": {
+      "trigger": "ohmygoat:smith_item",
+      "conditions": {
+        "input_item": {},
+        "upgrade_item": {
+          "items": [
+            "ohmygoat:goat_horn"
+          ]
+        },
+        "result_item": {}
+      }
+    }
+  },
+  "requirements": [
+    [
+      "horned_helmet"
+    ]
+  ]
+}

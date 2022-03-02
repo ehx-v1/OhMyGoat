@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ohmygoat",
+  "version": "${version}",
+  "name": "OhMyGoat",
+  "description": "A mod to give goats more functionalities.\nThis mods adds goat meat, goat cheese (made by putting goat milk into a cauldron)\nand the goat horn with which you can scare other players and upgrade helmets to horned, thorned helmets.\nBesides this there are many new advancements and other small things related to goats.",
+  "authors": [
+    "Affehund"
+  ],
+  "contact": {
+    "website": "https://www.curseforge.com/minecraft/mc-mods/goat",
+    "repo": "https://github.com/Affehund/OhMyGoat"
+  },
+  "license": "GPL-3.0",
+  "icon": "ohmygoat.png",
+  "accessWidener": "ohmygoat.accesswidener",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.affehund.ohmygoat.OhMyGoatClient"
+    ],
+    "main": [
+      "com.affehund.ohmygoat.OhMyGoat"
+    ],
+    "rei": [
+      "com.affehund.ohmygoat.core.compat.rei.GoatREIPlugin",
+      "com.affehund.ohmygoat.core.compat.rei.client.GoatClientREIPlugin"
+    ]
+  },
+  "mixins": [
+    "ohmygoat.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x"
+  }
+}
