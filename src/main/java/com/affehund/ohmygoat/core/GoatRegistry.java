@@ -62,6 +62,25 @@ public class GoatRegistry {
         ITEMS.forEach((id, item) -> Registry.register(Registry.ITEM, id, item));
     }
 
+    /*
+    Cauldron Behaviour; must be before registering the blocks
+     */
+
+    public static Map<Item, CauldronBehavior> GOAT_MILK_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
+    public static final CauldronBehavior EMPTY_GOAT_MILK_CAULDRON_BEHAVIOR = (state, world, pos, player, hand, stack) -> CauldronBehavior.emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(GoatRegistry.GOAT_MILK_BUCKET), blockState -> blockState.get(LeveledCauldronBlock.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL);
+    public static final CauldronBehavior FILL_WITH_GOAT_MILK = (state, level, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(level, pos, player, hand, stack, GoatRegistry.GOAT_MILK_CAULDRON_BLOCK.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
+
+    public static void registerCauldronBehaviours() {
+        CauldronBehavior.registerBucketBehavior(GoatRegistry.GOAT_MILK_CAULDRON_BEHAVIOR);
+
+        CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
+        CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
+        CauldronBehavior.LAVA_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
+        CauldronBehavior.POWDER_SNOW_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
+
+        GoatRegistry.GOAT_MILK_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
+        GoatRegistry.GOAT_MILK_CAULDRON_BEHAVIOR.put(Items.BUCKET, GoatRegistry.EMPTY_GOAT_MILK_CAULDRON_BEHAVIOR);
+    }
 
     /*
     Blocks
@@ -80,7 +99,6 @@ public class GoatRegistry {
         BLOCKS.forEach((id, block) -> Registry.register(Registry.BLOCK, id, block));
     }
 
-
     /*
     Block Entities
      */
@@ -96,27 +114,6 @@ public class GoatRegistry {
     public static void registerBlockEntities() {
         OhMyGoat.LOGGER.debug("Registering block entities");
         BLOCK_ENTITIES.forEach((id, blockEntityType) -> Registry.register(Registry.BLOCK_ENTITY_TYPE, id, blockEntityType));
-    }
-
-    /*
-    Cauldron Behaviour
-     */
-
-    public static Map<Item, CauldronBehavior> GOAT_MILK_CAULDRON_BEHAVIOR;
-    public static final CauldronBehavior EMPTY_GOAT_MILK_CAULDRON_BEHAVIOR = (state, world, pos, player, hand, stack) -> CauldronBehavior.emptyCauldron(state, world, pos, player, hand, stack, new ItemStack(GoatRegistry.GOAT_MILK_BUCKET), blockState -> blockState.get(LeveledCauldronBlock.LEVEL) == 3, SoundEvents.ITEM_BUCKET_FILL);
-    public static final CauldronBehavior FILL_WITH_GOAT_MILK = (state, level, pos, player, hand, stack) -> CauldronBehavior.fillCauldron(level, pos, player, hand, stack, GoatRegistry.GOAT_MILK_CAULDRON_BLOCK.getDefaultState().with(LeveledCauldronBlock.LEVEL, 3), SoundEvents.ITEM_BUCKET_EMPTY);
-
-    public static void registerCauldronBehaviours() {
-        GOAT_MILK_CAULDRON_BEHAVIOR = CauldronBehavior.createMap();
-        CauldronBehavior.registerBucketBehavior(GoatRegistry.GOAT_MILK_CAULDRON_BEHAVIOR);
-
-        CauldronBehavior.EMPTY_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
-        CauldronBehavior.WATER_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
-        CauldronBehavior.LAVA_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
-        CauldronBehavior.POWDER_SNOW_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
-
-        GoatRegistry.GOAT_MILK_CAULDRON_BEHAVIOR.put(GoatRegistry.GOAT_MILK_BUCKET, GoatRegistry.FILL_WITH_GOAT_MILK);
-        GoatRegistry.GOAT_MILK_CAULDRON_BEHAVIOR.put(Items.BUCKET, GoatRegistry.EMPTY_GOAT_MILK_CAULDRON_BEHAVIOR);
     }
 
 
